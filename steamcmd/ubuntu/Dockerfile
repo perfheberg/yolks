@@ -25,11 +25,11 @@ RUN			apt -y install \
 				libsdl1.2debian \
 				telnet \
 				net-tools \
-				netcat tzdata \
+				netcat-openbsd \
+                tzdata \
 				libtinfo6:i386 \
 				libcurl4-gnutls-dev:i386 \
 				libncurses6:i386 \
-				libcurl4-gnutls:i386 \
 				faketime:i386 \
 				lib32tinfo6 \
 				lib32z1 \
