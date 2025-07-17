@@ -15,7 +15,6 @@ RUN			apt -y install \
 				g++ \
 				lib32gcc-s1 \
 				libgcc-10-dev \
-				libcurl4-gnutls-dev:i386 \
 				libssl-dev:i386 \
 				libssl-dev \
 				libcurl4t64:i386 \
