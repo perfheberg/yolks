@@ -1,4 +1,4 @@
-FROM        --platform=$TARGETOS/$TARGETARCH python:2.7-slim
+FROM        --platform=$TARGETOS/$TARGETARCH python:2.7-slim-buster
 
 LABEL       author="Michael Parker" maintainer="parker@pterodactyl.io"
 
