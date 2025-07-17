@@ -11,7 +11,6 @@ STEAMCMD_DIR="./steamcmd"                       # SteamCMD's directory containin
 WORKSHOP_DIR="./Steam/steamapps/workshop"       # SteamCMD's directory containing workshop downloads
 STEAMCMD_LOG="${STEAMCMD_DIR}/steamcmd.log"     # Log file for SteamCMD
 GAME_ID=107410                                  # SteamCMD ID for the Arma 3 GAME (not server). Only used for Workshop mod downloads.
-EGG_URL='https://github.com/parkervcp/eggs/tree/master/game_eggs/steamcmd_servers/arma/arma3'   # URL for Pterodactyl Egg & Info (only used as info to legacy users)
 
 # Color Codes
 CYAN='\033[0;36m'
@@ -184,12 +183,8 @@ export INTERNAL_IP
 # Switch to the container's working directory
 cd /home/container || exit 1
 
-# Check for old eggs
 if [[ -z ${VALIDATE_SERVER} ]]; then # VALIDATE_SERVER was not in the previous version
-    echo -e "\n${RED}[STARTUP_ERR]: Please contact your administrator/host for support, and give them the following message:${NC}\n"
-    echo -e "\t${CYAN}Your Arma 3 Egg is outdated and no longer supported.${NC}"
-    echo -e "\t${CYAN}Please download the latest version at the following link, and install it in your panel:${NC}"
-    echo -e "\t${CYAN}${EGG_URL}${NC}\n"
+    echo -e "\n${RED}[STARTUP_ERR]: Please contact your administrator/host for support\n"
     exit 1
 fi
 

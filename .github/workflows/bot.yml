@@ -12,7 +12,7 @@ permissions:
   packages: write
 
 jobs:
-  pushArm:
+  pushArmAmd64:
     name: "yolks:bot_${{ matrix.tag }}"
     runs-on: ubuntu-latest
     strategy:
@@ -58,36 +58,7 @@ jobs:
           push: true
           tags: |
             ghcr.io/${{ steps.lower-repo.outputs.repository }}/yolks:bot_${{ matrix.tag }}
-            ${{ github.repository_owner == 'pelican-eggs' && format('ghcr.io/parkervcp/yolks:bot_{0}', matrix.tag) || '' }}
       - name: Move cache
         run: |
           rm -rf /tmp/.buildx-cache
           mv /tmp/.buildx-cache-new /tmp/.buildx-cache
-
-  # pushAmd:
-  #   name: "yolks:bot_${{ matrix.tag }}"
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     fail-fast: false
-  #     matrix:
-  #       tag:
-  #         - bastion
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - uses: docker/setup-buildx-action@v1
-  #       with:
-  #         version: "v0.7.0"
-  #         buildkitd-flags: --debug
-  #     - uses: docker/login-action@v1
-  #       with:
-  #         registry: ghcr.io
-  #         username: ${{ steps.lower-repo.outputs.repository }}
-  #         password: ${{ secrets.REGISTRY_TOKEN || secrets.GITHUB_TOKEN }}
-  #     - uses: docker/build-push-action@v6
-  #       with:
-  #         context: ./bot/${{ matrix.tag }}
-  #         file: ./bot/${{ matrix.tag }}/Dockerfile
-  #         platforms: linux/amd64
-  #         push: true
-  #         tags: |
-  #           ${{ github.repository_owner == 'pelican-eggs' && format('ghcr.io/parkervcp/yolks:bot_{0}', matrix.tag) || '' }}

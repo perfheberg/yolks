@@ -1,6 +1,6 @@
 FROM        --platform=$TARGETOS/$TARGETARCH ubuntu:24.04
 
-LABEL       org.opencontainers.image.source="https://github.com/pelican-eggs/yolks"
+LABEL       org.opencontainers.image.source="https://github.com/perfheberg/yolks"
 LABEL       org.opencontainers.image.licenses=AGPL-3.0-or-later
 
 ENV         DEBIAN_FRONTEND=noninteractive
