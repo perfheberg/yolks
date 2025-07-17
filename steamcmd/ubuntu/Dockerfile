@@ -22,7 +22,7 @@ RUN			apt -y install \
 				lib32stdc++6 \
 				libcurl3t64-gnutls:i386 \
 				libsdl2-2.0-0:i386 \
-				iproute2 gdb \
+				iproute2 \
 				libsdl1.2debian \
 				telnet \
 				net-tools \
